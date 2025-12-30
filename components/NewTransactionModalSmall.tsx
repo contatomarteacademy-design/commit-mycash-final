@@ -133,7 +133,7 @@ export function NewTransactionModalSmall() {
         category: finalCategory,
         date: new Date(formData.date),
         accountId: formData.accountId,
-        memberId: formData.memberId,
+        memberId: formData.memberId || undefined,
         installments:
           formData.installments.total > 1
             ? { current: 1, total: formData.installments.total }
