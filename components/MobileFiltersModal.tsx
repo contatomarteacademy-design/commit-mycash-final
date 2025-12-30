@@ -5,6 +5,7 @@ import { FiX, FiCheck } from 'react-icons/fi';
 import { useFinance } from '@/contexts/FinanceContext';
 import * as Dialog from '@radix-ui/react-dialog';
 import { DateRangePicker } from './DateRangePicker';
+import Image from 'next/image';
 
 export function MobileFiltersModal() {
   const { filters, setFilters, members } = useFinance();
@@ -113,10 +114,12 @@ export function MobileFiltersModal() {
                       }`}
                     >
                       {member.avatar ? (
-                        <img
+                        <Image
                           src={member.avatar}
                           alt={member.name}
-                          className="w-8 h-8 rounded-full object-cover border-2 border-white"
+                          width={32}
+                          height={32}
+                          className="rounded-full object-cover border-2 border-white"
                         />
                       ) : (
                         <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center text-xs font-semibold">

@@ -4,6 +4,7 @@ import { useFinance } from '@/contexts/FinanceContext';
 import { formatCurrency } from '@/lib/utils';
 import { FiTarget } from 'react-icons/fi';
 import { NewGoalModal } from './NewGoalModal';
+import Image from 'next/image';
 
 const goalImages: Record<string, string> = {
   'Viagem Europa': '/images/goals/goal-viagem-europa-669d2f.png',
@@ -47,10 +48,12 @@ export function GoalsSection() {
               >
                 <div className="h-[220px] relative overflow-hidden">
                   {imagePath ? (
-                    <img
+                    <Image
                       src={imagePath}
                       alt={goal.name}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="320px"
                     />
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300" />

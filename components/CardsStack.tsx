@@ -5,6 +5,7 @@ import { formatCurrency } from '@/lib/utils';
 import { FiCreditCard, FiPlus, FiChevronRight } from 'react-icons/fi';
 import { useNavigation } from '@/contexts/NavigationContext';
 import * as Dialog from '@radix-ui/react-dialog';
+import Image from 'next/image';
 
 const cardLogos: Record<string, string> = {
   Nubank: '/images/cards/logo-nubank.png',
@@ -108,10 +109,12 @@ export function CardsStack() {
                     {/* Logo */}
                     <div className={`w-8 h-8 rounded-full ${card.theme === 'black' ? 'bg-white/20' : card.theme === 'lime' ? 'bg-foreground/10' : 'bg-gray-200'} flex items-center justify-center overflow-hidden`}>
                       {cardLogos[card.name] ? (
-                        <img
+                        <Image
                           src={cardLogos[card.name]}
                           alt={card.name}
-                          className="w-full h-full object-contain"
+                          width={32}
+                          height={32}
+                          className="object-contain"
                         />
                       ) : (
                         <span className={`text-xs font-bold ${theme.text}`}>

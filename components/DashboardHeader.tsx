@@ -10,6 +10,7 @@ import { NewTransactionModal } from './NewTransactionModal';
 import { AddMemberModal } from './AddMemberModal';
 import { DateRangePicker } from './DateRangePicker';
 import { MobileFiltersModal } from './MobileFiltersModal';
+import Image from 'next/image';
 
 export function DashboardHeader() {
   const { filters, setFilters, members } = useFinance();
@@ -132,10 +133,12 @@ export function DashboardHeader() {
                       aria-label={`Filtrar por ${member.name}`}
                     >
                       {member.avatar ? (
-                        <img
+                        <Image
                           src={member.avatar}
                           alt={member.name}
-                          className="w-full h-full rounded-full object-cover"
+                          width={48}
+                          height={48}
+                          className="rounded-full object-cover"
                         />
                       ) : (
                         <span>{member.name[0]}</span>
