@@ -11,7 +11,8 @@ export function TransactionsTable() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
 
-  const getMember = (memberId: string) => {
+  const getMember = (memberId?: string) => {
+    if (!memberId) return undefined;
     return members.find((m) => m.id === memberId);
   };
 

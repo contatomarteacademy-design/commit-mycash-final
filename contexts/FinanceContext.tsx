@@ -128,7 +128,7 @@ export function FinanceProvider({ children }: { children: ReactNode }) {
             category: t.category,
             date: new Date(t.date),
             accountId: t.account_id || '',
-            memberId: t.member_id || '',
+            memberId: t.member_id || undefined,
             installments: t.installments_current && t.installments_total
               ? { current: t.installments_current, total: t.installments_total }
               : undefined,
@@ -295,7 +295,7 @@ export function FinanceProvider({ children }: { children: ReactNode }) {
         category: data.category,
         date: new Date(data.date),
         accountId: data.account_id || '',
-        memberId: data.member_id || '',
+        memberId: data.member_id || undefined,
         installments: data.installments_current && data.installments_total
           ? { current: data.installments_current, total: data.installments_total }
           : undefined,

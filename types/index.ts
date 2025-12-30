@@ -8,7 +8,7 @@ export interface Transaction {
   category: string;
   date: Date;
   accountId: string;
-  memberId: string;
+  memberId?: string;
   installments?: {
     current: number;
     total: number;
